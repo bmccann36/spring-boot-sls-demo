@@ -1,0 +1,15 @@
+
+
+service: spring-sls-demo
+
+provider:
+  name: aws
+  runtime: java11
+  region: us-east-1 #? replace with your region if different
+
+package:
+  artifact: build/distributions/springboot-sls-0.0.1.zip
+
+functions:
+  demo:
+    handler: com.serverless.Handler
