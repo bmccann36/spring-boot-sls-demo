@@ -1,0 +1,32 @@
+
+plugins {
+    id 'org.springframework.boot' version '2.2.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+    id 'idea'
+    id "io.freefair.lombok" version "5.1.0"
+}
+
+group = 'org.slsdemo'
+version = '0.0.1'
+description = 'spring-boot project lifted and shifted to run on AWS lambda'
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.3.3.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.3.3.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.3.3.RELEASE'
+    implementation 'com.h2database:h2:1.4.200'
+    implementation 'mysql:mysql-connector-java:8.0.21'
+    implementation 'org.springframework.boot:spring-boot-starter-security:2.3.3.RELEASE'
+    implementation 'javax.servlet:javax.servlet-api:4.0.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.3.3.RELEASE'
+    testImplementation 'io.rest-assured:rest-assured:3.3.0'
+}
+
+
