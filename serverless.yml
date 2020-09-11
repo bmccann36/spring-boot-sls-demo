@@ -13,3 +13,14 @@ package:
 functions:
   demo:
     handler: com.serverless.Handler
+    events:
+      - http:
+          path: demo
+          method: ANY
+
+  demoStream:
+    handler: com.serverless.StreamHandler
+    events:
+      - http:
+          path: demostream
+          method: POST
