@@ -6,6 +6,7 @@ provider:
   name: aws
   runtime: java11
   region: us-east-1 #? replace with your region if different
+  timeout: 30 #! pretty high if you ask me!!
 
 package:
   artifact: build/distributions/springboot-sls-0.0.1.zip
@@ -24,3 +25,16 @@ functions:
       - http:
           path: demostream
           method: POST
+
+  # we run the whole spring boot app inside one lambda function
+  bookStoreApp:
+    handler: com.springbootslsdemo.SpringLambdaHandler
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
