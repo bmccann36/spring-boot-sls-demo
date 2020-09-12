@@ -1,7 +1,5 @@
 package com.springbootslsdemo.web;
 
-import org.hibernate.exception.ConstraintViolationException;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,8 +25,8 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler({
       BookIdMismatchException.class,
-      ConstraintViolationException.class,
-      DataIntegrityViolationException.class
+//      ConstraintViolationException.class,
+//      DataIntegrityViolationException.class
     })
     public ResponseEntity<Object> handleBadRequest(Exception ex, WebRequest request) {
         return handleExceptionInternal(ex, ex
